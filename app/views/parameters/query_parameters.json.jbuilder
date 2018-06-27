@@ -1,1 +1,2 @@
-json.hello @hello
+#json.hello @hello
+json.params @output_message
