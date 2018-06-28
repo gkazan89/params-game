@@ -9,7 +9,6 @@ class ParametersController < ApplicationController
     end
     render "query_parameters.json.jbuilder"
   end
-
   def guess_query_method
     winning_number = 32
     input_guess = params["variable"].to_i
@@ -21,6 +20,11 @@ class ParametersController < ApplicationController
       @output_message = "You win!"
     end
     render "guess_query.json.jbuilder"  
+  end
+  def body_parameters_method
+    input_value = params["secret_info"]
+    @output_message = "The secret info is #{input_value}"
+    render "body_parameters.json.jbuilder"
   end
 end
 
